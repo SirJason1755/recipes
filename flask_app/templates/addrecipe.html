@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/recipes">Home Page</a><br>
+    <a href="/users/logout">Logout</a>
+    <H1>Add New Recipe</H1>
+    <br>
+    <form action="/recipes/new" method = 'POST'>
+        Name:<input type="text" name='name'><br>
+        Description:<input type = 'text'name = 'description'><br>
+        instructions:<input type = 'text'name = 'instructions'><br>
+        Under 30 minutes?:<input type = 'radio'name = 'cooktime' value="1" checked='checked'>YES
+        <input type="radio" name="cooktime" value="0">No
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>

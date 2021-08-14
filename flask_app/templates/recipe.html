@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <a href="/users/logout">Logout</a><br>
+    <a href="/recipes/create">Create a recipe</a>
+    <H1>Welcome {{user.first_name}} {{user.last_name}}</H1>
+    <h2>These are your recipes</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Under 30?</th>
+            <th>Actions</th>
+        </tr>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{recipe.name}}</td>
+            <td>{{recipe.cooktime}}</td>
+            <td><a href="/recipes/view/{{recipe.id}}">View Instructions</a></td>
+            <td><a href="/recipes/edit/{{recipe.id}}">Edit</a></td>
+            <td><a href="/recipes/delete/{{recipe.id}}">Delete</a></td>
+            
+            
+            
+        </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>
